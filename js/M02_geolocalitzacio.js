@@ -24,8 +24,8 @@ var app = {
     // this representa l'esdeveniment
     onDeviceReady: function() {
         var options = { frequency: 3000 };
-        //navigator.geolocation.getCurrentPosition(app.onSuccess, app.onError);
-        watchID =  navigator.geolocation.watchPosition(app.onSuccess, app.onError, options);
+        navigator.geolocation.getCurrentPosition(app.onSuccess, app.onError);
+        //watchID =  navigator.geolocation.watchPosition(app.onSuccess, app.onError, options);
 
     },
     //callback per a quan obtenim les dades de l'accelerometre

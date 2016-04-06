@@ -4,7 +4,7 @@
     sergi.grau@fje.edu
     versió 1.0 23.02.2016
 -->
-<html>
+<html lang="ca">
 <head>
     <meta charset="utf-8"/>
     <meta name="format-detection"
@@ -18,12 +18,12 @@
     <!-- Per a que el navegador encastat no es vegi -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'"/>
 
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
     <title>DAW</title>
-    <link href="css/ratchet.css" rel="stylesheet">
-    <script src="js/ratchet.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript">
@@ -31,54 +31,15 @@
     </script>
 </head>
 <body>
-<header class="bar bar-nav">
-    <h1 class="title">PhoneGap</h1>
-</header>
 
-<div class="content">
-    <p class="content-padded" id="estat"></p>
-    <div class="card">
-        <ul class="table-view">
-            <li class="table-view-cell">
-                <a class="push-right" href="M01_accelerometre.html">
-                    <strong>Accelerometre</strong>
-                </a>
-            </li>
-            <li class="table-view-cell">
-                <a class="push-right" href="M02_geolocalitzacio.html">
-                    <strong>Geolocalització</strong>
-                </a>
-            </li>
-            <li class="table-view-cell">
-                <a class="push-right" href="M03_mapes.html">
-                    <strong>Mapes</strong>
-                </a>
-            </li>
-        </ul>
+
+<div class="container">
+
+    <div class="starter-template">
+        <h1>PhoneGAP</h1>
+        <p class="lead">Selecciona el exercici que vols veure</p>
     </div>
+    
 </div>
-
-<nav class="bar bar-tab">
-    <a class="tab-item active" href="#">
-        <span class="icon icon-home"></span>
-        <span class="tab-label">Inici</span>
-    </a>
-    <a class="tab-item" href="#">
-        <span class="icon icon-person"></span>
-        <span class="tab-label">Perfil</span>
-    </a>
-    <a class="tab-item" href="#">
-        <span class="icon icon-star-filled"></span>
-        <span class="tab-label">Favorits</span>
-    </a>
-    <a class="tab-item" href="#">
-        <span class="icon icon-search"></span>
-        <span class="tab-label">Cerca</span>
-    </a>
-    <a class="tab-item" href="#">
-        <span class="icon icon-gear"></span>
-        <span class="tab-label">Ajustos</span>
-    </a>
-</nav>
 </body>
 </html>
