@@ -1,7 +1,7 @@
 /*
  * Aplicació que fa us del dibuix de mapes
  * https://developers.google.com/maps/documentation/javascript/
- * phonegap create accelerometer com.myapp.accelerometer accelerometer
+ * phonegap create mapes edu.fje.daw2 mapes
  * cordova platform add android
  * phonegap plugin add org.apache.cordova.geolocation
  * sergi.grau@fje.edu

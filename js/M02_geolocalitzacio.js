@@ -1,6 +1,6 @@
 /*
  * Aplicació que fa us de la geolocalització
- * phonegap create accelerometer com.myapp.accelerometer accelerometer
+ * phonegap create geolocalitzacio edu.fje.daw2 geolocalitzacio
  * cordova platform add android
  * phonegap plugin add org.apache.cordova.geolocation
  * sergi.grau@fje.edu

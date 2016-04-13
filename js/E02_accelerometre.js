@@ -2,7 +2,7 @@
  * Aplicació que fa us de l'accelerometre,
  * animant un punt per la pantalla.
  * cal afegir el plugin
- * phonegap create accelerometer com.myapp.accelerometer accelerometer
+ * phonegap create accelerometre edu.fje.daw2 accelerometre
  * cordova platform add android
  * phonegap plugin add org.apache.cordova.device-motion
  * sergi.grau@fje.edu
