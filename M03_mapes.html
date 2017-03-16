@@ -18,18 +18,14 @@
 
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta http-equiv="Content-Security-Policy"
-          content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'"/>
+    <!--<meta http-equiv="Content-Security-Policy"-->
+          <!--content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'"/>-->
 
     <title>DAW</title>
-<<<<<<< HEAD
     <script type="text/javascript" src="http://maps.googleapis.com/ maps/api/js?key=AIzaSyA8jpB5EihRsl8BvmUtAbRuKqP2x9PMOv8&sensor=true">
     </script>
-=======
-    <script type="text/javascript"
-            src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA8jpB5EihRsl8BvmUtAbRuKqP2x9PMOv8&sensor=true"></script>
-    <script type="text/javascript">    </script>
->>>>>>> origin/master
+    <link href="css/ratchet.css" rel="stylesheet">
+    <script src="js/ratchet.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/M03_mapes.js"></script>
     <script type="text/javascript">
@@ -43,8 +39,7 @@
 </head>
 <body>
 <header class="bar bar-nav">
-    <a class="icon icon-left-nav pull-left" href="index.html"></a>
-    <a class="icon icon-compose pull-right"></a>
+    <a href="index.html" class="btn btn-primary btn-block" role="button">Menu</a>
     <h1 class="title">Mapes</h1>
 </header>
 <div id="mapa"></div>

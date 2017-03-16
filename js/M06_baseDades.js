@@ -23,12 +23,12 @@ var app = {
     // this representa l'esdeveniment
     onDeviceReady: function () {
 
-        db = this.obtenirBaseDades();
+        db = app.obtenirBaseDades();
         db.transaction(function (tx) {
             tx.executeSql('CREATE TABLE IF NOT EXISTS LLISTA(id INTEGER PRIMARY KEY AUTOINCREMENT, accio)');
         }, this.error, this.obtenirItems);
         document.getElementById('desa').addEventListener('click', function (e) {
-            this.desar();
+            app.desar();
         });
     },
     obtenirBaseDades: function () {

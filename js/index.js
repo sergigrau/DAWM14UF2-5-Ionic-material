@@ -17,7 +17,7 @@ var app = {
     // callback per a esdeveiniment deviceready
     // this representa l'esdeveniment
     onDeviceReady: function() {
-        app.receivedEvent('estat ok');
+        app.receivedEvent('estat');
     },
     // Actualitzem DOM quan rebem un esdeveniment
     receivedEvent: function(id) {

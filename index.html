@@ -2,7 +2,7 @@
 <!--
     Pàgina principal de l'aplicació de PhoneGap
     sergi.grau@fje.edu
-    versió 1.0 23.02.2016
+    versió 1.0 23.02.2017
 -->
 <html lang="ca">
 <head>
@@ -21,9 +21,11 @@
     <meta http-equiv="Content-Security-Policy"
           content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'"/>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-
     <title>DAW</title>
+
+    <link href="css/ratchet.css" rel="stylesheet">
+    <script src="js/ratchet.js"></script>
+
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript">
@@ -36,19 +38,16 @@
 <div class="container">
 
     <div class="starter-template">
-        <h1>PhoneGAP</h1>
-        <p class="lead">Selecciona el exercici que vols veure</p>
+        <h2>PhoneGAP/Cordova</h2>
     </div>
-    <a href="M01_accelerometre.html" class="btn btn-info" role="button">Accelerometre</a>
-    <a href="M02_geolocalitzacio.html" class="btn btn-info" role="button">Geo</a>
-    <a href="M03_mapes.html" class="btn btn-info" role="button">Mapes</a>
-<<<<<<< HEAD
-    <a href="M04_fitxers.html" class="btn btn-info" role="button">Fitxers</a>
-    <a href="M05_fitxersLocal.html" class="btn btn-info" role="button">Fitxers Local</a>
-    <a href="M06_baseDades.html" class="btn btn-info" role="button">Base de dades</a>
-=======
-
->>>>>>> origin/master
+    <a href="M01_accelerometre.html" class="btn btn-primary btn-block" role="button">Accelerometre</a>
+    <a href="M02_geolocalitzacio.html" class="btn btn-primary btn-block" role="button">Geo</a>
+    <a href="M03_mapes.html" class="btn btn-primary btn-block" role="button">Mapes</a>
+    <a href="M04_fitxers.html" class="btn btn-primary btn-block" role="button">Fitxers</a>
+    <a href="M05_fitxersLocal.html" class="btn btn-primary btn-block" role="button">Fitxers Local</a>
+    <a href="M06_baseDades.html" class="btn btn-primary btn-block" role="button">Base de dades</a>
+    <div id="estat"></div>
+    al navegador amb  chrome://flags/ i enable "Force enable touch events".
 </div>
 </body>
 </html>
