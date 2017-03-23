@@ -3,10 +3,10 @@
 
 <h1>PhoneGap / CordovaJS Workshop</h1>
 
-1.Simple Sample <br/>
-2.Static content<br/>
-3.URL parameters<br/>
-4.QueryString parametres<br/>
-5.POST<br/>
-6.FileUpload<br/>
-7.MiddleWare<br/>
+1.Accelerometer<br/>
+2.Geolocation<br/>
+3.Maps<br/>
+4.Files<br/>
+5.Local files<br/>
+6.DataBase<br/>
+
