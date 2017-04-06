@@ -17,11 +17,11 @@ var app = {
     // callback per a esdeveiniment deviceready
     // this representa l'esdeveniment
     onDeviceReady: function() {
-        app.receivedEvent('estat correcte');
+        app.receivedEvent('estat');
     },
     // Actualitzem DOM quan rebem un esdeveniment
     receivedEvent: function(id) {
-        document.getElementById(id).innerHTML='ok'; 
+        document.getElementById(id).innerHTML='correcte';
         console.log('Rebent esdeveniment: ' + id);
     },
 };

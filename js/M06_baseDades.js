@@ -26,9 +26,12 @@ var app = {
         db = app.obtenirBaseDades();
         db.transaction(function (tx) {
             tx.executeSql('CREATE TABLE IF NOT EXISTS LLISTA(id INTEGER PRIMARY KEY AUTOINCREMENT, accio)');
+            db.consultar(tx, db.obtenirItems());
         }, this.error, this.obtenirItems);
         document.getElementById('desa').addEventListener('click', function (e) {
             app.desar();
+
+
         });
     },
     obtenirBaseDades: function () {
