@@ -6,7 +6,8 @@
 1.Accelerometer<br/>
 2.Geolocation<br/>
 3.Maps<br/>
-4.Files<br/>
+4.Remote Files<br/>
 5.Local files<br/>
 6.DataBase<br/>
+7.Camera
 

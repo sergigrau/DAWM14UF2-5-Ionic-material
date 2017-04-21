@@ -23,6 +23,7 @@ paginaActual.enrera = function(){
     });
 };
 
+var db;
 var app = {
     // Constructor
     initialize: function () {
@@ -40,12 +41,13 @@ var app = {
         db = app.obtenirBaseDades();
         db.transaction(function (tx) {
             tx.executeSql('CREATE TABLE IF NOT EXISTS LLISTA(id INTEGER PRIMARY KEY AUTOINCREMENT, accio)');
-            db.consultar(tx, db.obtenirItems());
+            //db.consultar(tx, db.obtenirItems());
         }, this.error, this.obtenirItems);
         document.getElementById('desa').addEventListener('click', function (e) {
             app.desar();
-
-
+        });
+        document.getElementById('consulta').addEventListener('click', function (e) {
+            app.consultar();
         });
     },
     obtenirBaseDades: function () {
