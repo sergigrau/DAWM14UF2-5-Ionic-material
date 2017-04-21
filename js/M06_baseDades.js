@@ -3,11 +3,25 @@
  * doncs utilitza la base de dades del propi navegador
  * phonegap create baseDades edu.fje.daw2 baseDades
  * cordova platform add android
-
  * sergi.grau@fje.edu
- * versió 1.0 13.04.2016
- *
+ * versió 2.0 20.04.2017
  */
+paginaActual={};
+
+paginaActual.init = function() {
+    console.log("cridant :: init");
+};
+
+paginaActual.enrera = function(){
+    console.log("detall :: enrera");
+    $("body").load("M00_llistatAPI.html", function(){
+        $.getScript("js/M00_llistatAPI.js", function() {
+            if (paginaActual.init) {
+                paginaActual.init();
+            }
+        });
+    });
+};
 
 var app = {
     // Constructor
@@ -66,3 +80,4 @@ var app = {
     }
 }
 
+window.addEventListener('load', app.initialize());

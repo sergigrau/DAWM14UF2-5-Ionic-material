@@ -1,9 +1,24 @@
-/*
-* Aplicació que mostra quan el dispositiu està disponible
-* sergi.grau@fje.edu
-* versió 1.0 24.02.2016
-*
-*/
+/* Gestor de la navegació de l'aplicació cordova amb ratchet
+ * sergi.grau@fje.edu
+ * versió 2.0 20.04.2017
+ */
+
+
+var historial = [];
+var paginaActual = {};
+
+function init(){
+
+    $("body").load("M00_llistatAPI.html", function(){
+        $.getScript("js/M00_llistatAPI.js", function() {
+            if (paginaActual.init) {
+                paginaActual.init();
+            }
+        });
+    });
+
+}
+
 var app = {
     // Constructor
     initialize: function() {
@@ -25,3 +40,5 @@ var app = {
         console.log('Rebent esdeveniment: ' + id);
     },
 };
+
+

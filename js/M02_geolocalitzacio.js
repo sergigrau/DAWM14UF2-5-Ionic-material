@@ -4,9 +4,27 @@
  * cordova platform add android
  * phonegap plugin add org.apache.cordova.geolocation
  * sergi.grau@fje.edu
- * versió 1.0 24.02.2016
+ * versió 2.0 20.04.2017
  *
  */
+
+paginaActual={};
+
+paginaActual.init = function() {
+    console.log("cridant :: init");
+};
+
+paginaActual.enrera = function(){
+    console.log("detall :: enrera");
+    $("body").load("M00_llistatAPI.html", function(){
+        $.getScript("js/M00_llistatAPI.js", function() {
+            if (paginaActual.init) {
+                paginaActual.init();
+            }
+        });
+    });
+};
+
 
 var watchID = null;
 
@@ -31,8 +49,8 @@ var app = {
     //callback per a quan obtenim les dades de l'accelerometre
     onSuccess: function(posicio){
         var geoElement =
-            document.getElementById('dades');
-        geoElement .innerHTML =
+            document.getElementById('geolocalitzacio');
+        geoElement.innerHTML =
             'Latitud: '  + posicio.coords.latitude + '<br />' +
             'Longitud: ' + posicio.coords.longitude + '<br />' +
             'Altitud: '  + posicio.coords.altitude + '<br />' +
@@ -67,3 +85,6 @@ var app = {
 
     }
 };
+
+
+window.addEventListener('load', app.initialize());
