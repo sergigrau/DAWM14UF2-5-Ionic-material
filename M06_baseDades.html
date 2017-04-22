@@ -1,4 +1,4 @@
-<script>
+<script xmlns="http://www.w3.org/1999/html">
     $.getScript("js/M06_baseDades.js");
 </script>
 
@@ -8,10 +8,21 @@
 </header>
 
 <div class="content">
-    <h1>Llista tasques</h1>
+    <h1 >Llista tasques</h1>
     <input type="text"  id="accio" />
-    <input class="btn btn-positive" type="button" id="desa" value="desa" />
-    <input class="btn btn-positive" type="button" id="consulta" value="consulta" />
     <div id="missatge"></div>
-    <div id="llista"></div>
+    <ul class="table-view" id="llista">
+
+
+    </ul>
 </div>
+
+<nav class="bar bar-tab">
+    <a class="tab-item active" href="#" id="desaBD">
+        Desa
+    </a>
+    <a class="tab-item active" href="#" id="esborraBD">
+        Esborra
+    </a>
+</nav>
+</nav>

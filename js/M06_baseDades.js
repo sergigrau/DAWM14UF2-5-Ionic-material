@@ -23,6 +23,13 @@ paginaActual.enrera = function(){
     });
 };
 
+document.getElementById('desaBD').addEventListener('click', function (e) {
+    app.desar();
+});
+document.getElementById('esborraBD').addEventListener('click', function (e) {
+    app.esborrar();
+});
+
 var db;
 var app = {
     // Constructor
@@ -40,24 +47,20 @@ var app = {
 
         db = app.obtenirBaseDades();
         db.transaction(function (tx) {
-            tx.executeSql('CREATE TABLE IF NOT EXISTS LLISTA(id INTEGER PRIMARY KEY AUTOINCREMENT, accio)');
-            //db.consultar(tx, db.obtenirItems());
-        }, this.error, this.obtenirItems);
-        document.getElementById('desa').addEventListener('click', function (e) {
-            app.desar();
-        });
-        document.getElementById('consulta').addEventListener('click', function (e) {
-            app.consultar();
-        });
+            tx.executeSql('CREATE TABLE IF NOT EXISTS LLISTA(accio)');
+        }, app.error, app.obtenirItems);
+
     },
     obtenirBaseDades: function () {
         return window.openDatabase("llistaBD", "1.0", "Llista BD", 200000);
     },
     desar: function () {
+        console.log('desar');
         var valor = document.getElementById('accio').value;
         db.transaction(function (tx) {
+            if(valor!='')
             tx.executeSql('INSERT INTO LLISTA (accio) VALUES ("' + valor + '")');
-        }, this.error, this.obtenirItems);
+        }, this.error, app.obtenirItems);
         document.getElementById('accio').value = '';
     },
     error: function (error) {
@@ -66,7 +69,7 @@ var app = {
     },
     obtenirItems: function () {
         db.transaction(function (tx) {
-            tx.executeSql('SELECT * FROM LLISTA', [], this.consultar, this.error);
+            tx.executeSql('SELECT * FROM LLISTA', [], app.consultar, app.error);
         }, this.error);
     },
     consultar: function (tx, resultats) {
@@ -74,11 +77,16 @@ var app = {
         var sortida = '';
         for (var i = 0; i < len; i++) {
             sortida = sortida +
-                '<li id="' + resultats.rows.item(i).id + '">' +
+                '<li class="table-view-cell" id="' + resultats.rows.item(i).id + '">' +
                 resultats.rows.item(i).accio + '</li>';
         }
-        document.getElementById('missatge').innerHTML = '<p>total items:</p>';
+        document.getElementById('missatge').innerHTML = 'total items:'+len;
         document.getElementById('llista').innerHTML = '<ul>' + sortida + '</ul>';
+    },
+    esborrar:  function () {
+        db.transaction(function (tx) {
+            tx.executeSql('DROP TABLE IF EXISTS LLISTA');
+        }, this.error);
     }
 }
 
