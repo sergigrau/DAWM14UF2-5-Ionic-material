@@ -23,13 +23,6 @@ paginaActual.enrera = function(){
     });
 };
 
-document.getElementById('desaBD').addEventListener('click', function (e) {
-    app.desar();
-});
-document.getElementById('esborraBD').addEventListener('click', function (e) {
-    app.esborrar();
-});
-
 var db;
 var app = {
     // Constructor
@@ -58,7 +51,6 @@ var app = {
         console.log('desar');
         var valor = document.getElementById('accio').value;
         db.transaction(function (tx) {
-            if(valor!='')
             tx.executeSql('INSERT INTO LLISTA (accio) VALUES ("' + valor + '")');
         }, this.error, app.obtenirItems);
         document.getElementById('accio').value = '';

@@ -5,9 +5,27 @@
  * phonegap plugin add org.apache.cordova.file
  * phonegap plugin add org.apache.cordova.file-transfer
  * sergi.grau@fje.edu
- * versió 1.0 11.04.2016
+ * versió 1.0 20.04.2017
  *
  */
+
+
+paginaActual={};
+
+paginaActual.init = function() {
+    console.log("cridant :: init");
+};
+
+paginaActual.enrera = function(){
+    console.log("detall :: enrera");
+    $("body").load("M00_llistatAPI.html", function(){
+        $.getScript("js/M00_llistatAPI.js", function() {
+            if (paginaActual.init) {
+                paginaActual.init();
+            }
+        });
+    });
+};
 
 var directori;
 
@@ -25,9 +43,6 @@ var app = {
     // this representa l'esdeveniment
     onDeviceReady: function () {
         window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, this.accedirFS, null);
-        document.getElementById('desa').addEventListener('click', function (e) {
-            this.desar();
-        });
     },
 
     obtenirNomFitxer: function (url) {
