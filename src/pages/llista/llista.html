@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>llista d'items</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <button ion-item *ngFor="let item of items" (click)="itemPolsat($event, item)">
+      <ion-icon name="{{item.icona}}" item-left></ion-icon>
+      {{item.titol}}
+      <div class="item-note" item-right>
+        {{item.text}}
+      </div>
+    </button>
+  </ion-list>
+</ion-content>
