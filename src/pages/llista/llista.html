@@ -8,6 +8,8 @@
 </ion-header>
 
 <ion-content>
+
+
   <ion-list>
     <button ion-item *ngFor="let item of items" (click)="itemPolsat($event, item)">
       <ion-icon name="{{item.icona}}" item-left></ion-icon>
@@ -17,4 +19,8 @@
       </div>
     </button>
   </ion-list>
+
+
+  <button ion-button color="primary" menuToggle>Accedir al Menu</button>
+
 </ion-content>

@@ -5,7 +5,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { DetallsPage } from '../detalls/detalls';
 
 @Component({
-  selector: 'page-list',
+  selector: 'llista',
   templateUrl: 'llista.html'
 })
 export class LlistaPage {

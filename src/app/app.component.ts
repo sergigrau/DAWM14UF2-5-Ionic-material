@@ -4,6 +4,7 @@ import { Platform, MenuController, Nav } from 'ionic-angular';
 
 import { IonicPage } from '../pages/inici/inici';
 import { LlistaPage } from '../pages/llista/llista';
+import { CalendariPage } from '../pages/calendari/calendari';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -22,7 +23,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage = IonicPage;
-  pages: Array<{titol: string, component: any}>;
+  pagines: Array<{titol: string, component: any}>;
 
   constructor(
     public platform: Platform,
@@ -32,9 +33,10 @@ export class MyApp {
   ) {
     this.initializeApp();
 
-    this.pages = [
+    this.pagines = [
       { titol: 'Ionic', component: IonicPage },
-      { titol: 'Llista / Detall', component: LlistaPage }
+      { titol: 'Llista / Detall', component: LlistaPage },
+      { titol: 'Calendari', component: CalendariPage }
     ];
   }
 

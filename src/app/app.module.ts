@@ -6,6 +6,8 @@ import { MyApp } from './app.component';
 import { IonicPage } from '../pages/inici/inici';
 import { DetallsPage } from '../pages/detalls/detalls';
 import { LlistaPage } from '../pages/llista/llista';
+import {CalendariPage} from "../pages/calendari/calendari";
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -15,7 +17,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     IonicPage,
     DetallsPage,
-    LlistaPage
+    LlistaPage,
+    CalendariPage
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     IonicPage,
     DetallsPage,
-    LlistaPage
+    LlistaPage,
+    CalendariPage
   ],
   providers: [
     StatusBar,
