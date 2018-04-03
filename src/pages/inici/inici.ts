@@ -9,17 +9,17 @@ export class IonicPage {
   slides = [
     {
       titol: "DAW2 . M14UF2 . Ionic!",
-      descripcio: "The <b>Ionic Component Documentation</b> showcases a number of useful components that are included out of the box with Ionic.",
+      descripcio: "<b>Ionic</b> és un bastiment per a construir aplicacions híbrides modernes.",
       imatge: "assets/imgs/ica-slidebox-img-1.png",
     },
     {
       titol: "What is Ionic?",
-      descripcio: "<b>Ionic Framework</b> is an open source SDK that enables developers to build high quality mobile apps with web technologies like HTML, CSS, and JavaScript.",
+      descripcio: "<b>Ionic</b> és open source i es basa en HTML5, CSS, i TS.",
       imatge: "assets/imgs/ica-slidebox-img-2.png",
     },
     {
       titol: "What is Ionic Cloud?",
-      descripcio: "The <b>Ionic Cloud</b> is a cloud platform for managing and scaling Ionic apps with integrated services like push notifications, native builds, user auth, and live updating.",
+      descripcio: "<b>Ionic Cloud</b> es una plataforma al núvol per a gestionar les aplicacions.",
       imatge: "assets/imgs/ica-slidebox-img-3.png",
     }
   ];
