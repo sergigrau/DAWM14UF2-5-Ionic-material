@@ -4,10 +4,15 @@ import { Platform, MenuController, Nav } from 'ionic-angular';
 
 import { IonicPage } from '../pages/inici/inici';
 import { LlistaPage } from '../pages/llista/llista';
-import { CalendariPage } from '../pages/calendari/calendari';
+import { BaseDadesPage } from '../pages/baseDades/baseDades';
+import { CameraPage } from '../pages/camera/camera';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+
+import { BaseDadesService } from '../providers/baseDadesService';
+import { SQLite } from '@ionic-native/sqlite';
+
 
 /*
   Aplicació amb Ionic
@@ -29,14 +34,17 @@ export class MyApp {
     public platform: Platform,
     public menu: MenuController,
     public statusBar: StatusBar,
-    public splashScreen: SplashScreen
+    public splashScreen: SplashScreen,
+    public baseDadesService: BaseDadesService,
+    public sqlite: SQLite
   ) {
     this.initializeApp();
 
     this.pagines = [
       { titol: 'Ionic', component: IonicPage },
       { titol: 'Llista / Detall', component: LlistaPage },
-      { titol: 'Calendari', component: CalendariPage }
+      { titol: 'BaseDades', component: BaseDadesPage },
+      { titol: 'Camera', component: CameraPage}
     ];
   }
 
@@ -44,11 +52,26 @@ export class MyApp {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      this.createDatabase();
     });
   }
 
   obrirPagina(page) {
     this.menu.close();
     this.nav.setRoot(page.component);
+  }
+
+  private createDatabase(){
+    this.sqlite.create({
+      name: 'data.db',
+      location: 'default' // the location field is required
+    })
+      .then((db) => {
+        this.baseDadesService.setDatabase(db);
+        return this.baseDadesService.createTable();
+      })
+      .catch(error =>{
+        console.error(error);
+      });
   }
 }
