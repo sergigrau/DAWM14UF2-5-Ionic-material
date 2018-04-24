@@ -1,6 +1,9 @@
 <ion-header>
-  <ion-navbar color="primary">
-    <ion-title>Tasks</ion-title>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Tasques</ion-title>
     <ion-buttons right>
       <button ion-button icon-only (click)="openAlertNewTask()">
         <ion-icon name="add"></ion-icon>
@@ -11,18 +14,18 @@
 
 <ion-content>
   <ion-list>
-    <ion-item *ngIf="tasks.length == 0">
-      Empty
+    <ion-item *ngIf="tasques.length == 0">
+      Cap
     </ion-item>
-    <ion-item-sliding #sliding *ngFor="let task of tasks; let i = index">
+    <ion-item-sliding #sliding *ngFor="let tasca of tasques; let i = index">
       <ion-item >
-        <ion-label>{{ task.title }}</ion-label>
-        <ion-checkbox (ionChange)="updateTask( task, i )" [checked]="task.completed"></ion-checkbox>
+        <ion-label>{{ tasca.titol }}</ion-label>
+        <ion-checkbox (ionChange)="updateTask( tasca, i )" [checked]="tasca.completed"></ion-checkbox>
       </ion-item>
       <ion-item-options side="right" icon-left>
-        <button ion-button color="danger" (click)="deleteTask(task, i)">
+        <button ion-button color="danger" (click)="esborrarTasca(tasca, i)">
           <ion-icon name="trash"></ion-icon>
-          Delete
+          Esborra
         </button>
       </ion-item-options>
     </ion-item-sliding>

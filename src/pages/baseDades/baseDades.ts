@@ -13,33 +13,33 @@ import { BaseDadesService } from '../../providers/baseDadesService';
 export class BaseDadesPage{
 
 
-  tasks: any[] = [];
+  tasques: any[] = [];
   constructor(
     public alertCtrl: AlertController,
     public navCtrl: NavController,
-    public tasksService: BaseDadesService
+    public baseDadesService: BaseDadesService
   ) {}
 
   ionViewDidLoad(){
-    this.getAllTasks();
+    this.obtenirTotesTasques();
   }
 
-  deleteTask(task: any, index){
-    this.tasksService.delete(task)
+  esborrarTasca(task: any, index){
+    this.baseDadesService.delete(task)
       .then(response => {
         console.log( response );
-        this.tasks.splice(index, 1);
+        this.tasques.splice(index, 1);
       })
       .catch( error => {
         console.error( error );
       })
   }
 
-  getAllTasks(){
-    this.tasksService.getAll()
-      .then(tasks => {
-        console.log(tasks);
-        this.tasks = tasks;
+  obtenirTotesTasques(){
+    this.baseDadesService.getAll()
+      .then(tasques => {
+        console.log(tasques);
+        this.tasques = tasques;
       })
       .catch( error => {
         console.error( error );
@@ -67,9 +67,9 @@ export class BaseDadesPage{
           text: 'Crear',
           handler: (data)=>{
             data.completed = false;
-            this.tasksService.create(data)
+            this.baseDadesService.create(data)
               .then(response => {
-                this.tasks.unshift( data );
+                this.tasques.unshift( data );
               })
               .catch( error => {
                 console.error( error );
@@ -84,9 +84,9 @@ export class BaseDadesPage{
   updateTask(task, index){
     task = Object.assign({}, task);
     task.completed = !task.completed;
-    this.tasksService.update(task)
+    this.baseDadesService.update(task)
       .then( response => {
-        this.tasks[index] = task;
+        this.tasques[index] = task;
       })
       .catch( error => {
         console.error( error );

@@ -19,22 +19,22 @@ export class BaseDadesService {
   }
 
   create(task: any){
-    let sql = 'INSERT INTO tasks(title, completed) VALUES(?,?)';
+    let sql = 'INSERT INTO tasques(title, completed) VALUES(?,?)';
     return this.db.executeSql(sql, [task.title, task.completed]);
   }
 
   createTable(){
-    let sql = 'CREATE TABLE IF NOT EXISTS tasks(id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT, completed INTEGER)';
+    let sql = 'CREATE TABLE IF NOT EXISTS tasques(id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT, completed INTEGER)';
     return this.db.executeSql(sql, []);
   }
 
   delete(task: any){
-    let sql = 'DELETE FROM tasks WHERE id=?';
+    let sql = 'DELETE FROM tasques WHERE id=?';
     return this.db.executeSql(sql, [task.id]);
   }
 
   getAll(){
-    let sql = 'SELECT * FROM tasks';
+    let sql = 'SELECT * FROM tasques';
     return this.db.executeSql(sql, [])
       .then(response => {
         let tasks = [];
@@ -47,7 +47,7 @@ export class BaseDadesService {
   }
 
   update(task: any){
-    let sql = 'UPDATE tasks SET title=?, completed=? WHERE id=?';
+    let sql = 'UPDATE tasques SET title=?, completed=? WHERE id=?';
     return this.db.executeSql(sql, [task.title, task.completed, task.id]);
   }
 
