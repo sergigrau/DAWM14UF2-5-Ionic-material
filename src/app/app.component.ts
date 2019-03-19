@@ -2,19 +2,19 @@ import { Component, ViewChild } from '@angular/core';
 
 import { Platform, MenuController, Nav } from 'ionic-angular';
 
-import { IonicPage } from '../pages/inici/inici';
-import { LlistaPage } from '../pages/llista/llista';
-import { BaseDadesPage } from '../pages/baseDades/baseDades';
-import { CameraPage } from '../pages/camera/camera';
+import { IonicPage } from '../pagines/inici/inici';
+import { LlistaPage } from '../pagines/llista/llista';
+import { BaseDadesPage } from '../pagines/baseDades/baseDades';
+import { CameraPage } from '../pagines/camera/camera';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { BaseDadesService } from '../providers/baseDadesService';
 import { SQLite } from '@ionic-native/sqlite';
-import {GeoPage} from "../pages/geolocalitzacio/geolocalitzacio";
-import {ContactPage} from "../pages/contactes/contactes";
-import {SearchPage} from "../pages/trucada/trucada";
+import {GeoPage} from "../pagines/geolocalitzacio/geolocalitzacio";
+import {ContactPage} from "../pagines/contactes/contactes";
+import {SearchPage} from "../pagines/trucada/trucada";
 
 /*
   Aplicació amb Ionic

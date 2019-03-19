@@ -3,14 +3,14 @@ import {NgModule, ErrorHandler} from '@angular/core';
 import {IonicApp, IonicModule, IonicErrorHandler} from 'ionic-angular';
 import {MyApp} from './app.component';
 
-import {IonicPage} from '../pages/inici/inici';
-import {DetallsPage} from '../pages/detalls/detalls';
-import {LlistaPage} from '../pages/llista/llista';
-import {BaseDadesPage} from "../pages/baseDades/baseDades";
-import {CameraPage} from "../pages/camera/camera";
-import {GeoPage} from "../pages/geolocalitzacio/geolocalitzacio";
-import {ContactPage} from "../pages/contactes/contactes";
-import {SearchPage} from "../pages/trucada/trucada";
+import {IonicPage} from '../pagines/inici/inici';
+import {DetallsPage} from '../pagines/detalls/detalls';
+import {LlistaPage} from '../pagines/llista/llista';
+import {BaseDadesPage} from "../pagines/baseDades/baseDades";
+import {CameraPage} from "../pagines/camera/camera";
+import {GeoPage} from "../pagines/geolocalitzacio/geolocalitzacio";
+import {ContactPage} from "../pagines/contactes/contactes";
+import {SearchPage} from "../pagines/trucada/trucada";
 
 import { BaseDadesService } from '../providers/baseDadesService';
 

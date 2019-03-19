@@ -29,8 +29,8 @@ export class CameraPage {
   }
   ferFoto(){
     const options: CameraOptions = {
-      quality: 100,
       destinationType: this.camera.DestinationType.DATA_URL,
+      quality: 100,
       encodingType: this.camera.EncodingType.JPEG,
       mediaType: this.camera.MediaType.PICTURE
     }
