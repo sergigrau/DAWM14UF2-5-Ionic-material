@@ -2,14 +2,14 @@ import {Component} from '@angular/core';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { AndroidPermissions } from '@ionic-native/android-permissions';
 
-
-/*
-$ ionic cordova plugin add cordova-plugin-camera
-$ npm install --save @ionic-native/camera
-
-cal instal·lar permisos
-$ ionic cordova plugin add cordova-plugin-android-permissions
-$ npm install --save @ionic-native/android-permissions
+/**
+ * Component que mostra el funcionament de la Camera
+ * ionic cordova plugin add cordova-plugin-camera
+ * npm install --save @ionic-native/camera
+ * ionic cordova plugin add cordova-plugin-android-permissions
+ * npm install --save @ionic-native/android-permissions
+ * @author sergi.grau@fje.edu
+ * @version 1.0 30.04.2018
  */
 
 @Component({

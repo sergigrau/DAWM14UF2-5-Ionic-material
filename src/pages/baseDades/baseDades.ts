@@ -3,9 +3,13 @@ import { NavController, AlertController } from 'ionic-angular';
 import { BaseDadesService } from '../../providers/baseDadesService';
 
 /**
+ * Component que mostra el funcionament de SQLite
  * ionic cordova plugin add cordova-sqlite-storage
- npm install --save @ionic-native/sqlite
+ * npm install --save @ionic-native/sqlite
+ * @author sergi.grau@fje.edu
+ * @version 1.0 30.04.2018
  */
+
 @Component({
   selector: 'baseDades',
   templateUrl: 'baseDades.html'
@@ -24,8 +28,8 @@ export class BaseDadesPage{
     this.obtenirTotesTasques();
   }
 
-  esborrarTasca(task: any, index){
-    this.baseDadesService.delete(task)
+  esborrarTasca(tasca: any, index){
+    this.baseDadesService.delete(tasca)
       .then(response => {
         console.log( response );
         this.tasques.splice(index, 1);

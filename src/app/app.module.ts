@@ -8,6 +8,9 @@ import {DetallsPage} from '../pages/detalls/detalls';
 import {LlistaPage} from '../pages/llista/llista';
 import {BaseDadesPage} from "../pages/baseDades/baseDades";
 import {CameraPage} from "../pages/camera/camera";
+import {GeoPage} from "../pages/geolocalitzacio/geolocalitzacio";
+import {ContactPage} from "../pages/contactes/contactes";
+import {SearchPage} from "../pages/trucada/trucada";
 
 import { BaseDadesService } from '../providers/baseDadesService';
 
@@ -23,7 +26,10 @@ import { SQLite } from '@ionic-native/sqlite';
     DetallsPage,
     LlistaPage,
     BaseDadesPage,
-    CameraPage
+    CameraPage,
+    GeoPage,
+    ContactPage,
+    SearchPage
   ],
   imports: [
     BrowserModule,
@@ -36,7 +42,10 @@ import { SQLite } from '@ionic-native/sqlite';
     DetallsPage,
     LlistaPage,
     BaseDadesPage,
-    CameraPage
+    CameraPage,
+    GeoPage,
+    ContactPage,
+    SearchPage
   ],
   providers: [
     StatusBar,

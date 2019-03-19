@@ -12,7 +12,7 @@ import { Geolocation } from '@ionic-native/geolocation';
 
 @Component({
   selector: 'Geopage',
-  templateUrl: 'Geolocation.html',
+  templateUrl: 'geolocalitzacio.html',
 })
 export class GeoPage {
 
@@ -32,15 +32,15 @@ export class GeoPage {
       // resp.coords.latitude
       // resp.coords.longitude
       //let location= 'lat'+ res.coords.latitude +'lang'+ res.coords.longitude;
-      let location='lat '+res.coords.latitude+' lang '+res.coords.longitude;
+      let geolocalitzacio='lat '+res.coords.latitude+' lang '+res.coords.longitude;
       let toast = this.toastCtrl.create({
-        message: location,
+        message: geolocalitzacio,
         duration: 3000
       });
       toast.present();
 
     }).catch((error) => {
-      console.log('Error getting location', error);
+      console.log('Error obtetint localizatció', error);
     });
   }
 }
