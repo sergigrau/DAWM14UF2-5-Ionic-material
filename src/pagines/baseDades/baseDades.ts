@@ -7,7 +7,8 @@ import { BaseDadesService } from '../../providers/baseDadesService';
  * ionic cordova plugin add cordova-sqlite-storage
  * npm install --save @ionic-native/sqlite
  * @author sergi.grau@fje.edu
- * @version 1.0 30.04.2018
+ * @version 2.0 25.03.2019
+ *
  */
 
 @Component({
@@ -52,25 +53,25 @@ export class BaseDadesPage{
 
   openAlertNewTask(){
     let alert = this.alertCtrl.create({
-      title: 'Crear tarea',
-      message: 'escribe el nombre de la tarea',
+      title: 'Crear tasca',
+      message: 'Escriu el nom de la tasca',
       inputs: [
         {
-          name: 'title',
-          placeholder: 'Digitar nueva tarea.',
+          name: 'titol',
+          placeholder: 'títol',
         }
       ],
       buttons: [
         {
-          text: 'Cancelar',
+          text: 'Cancel·lar',
           handler: () =>{
-            console.log('cancelar');
+            console.log('Cancel·lar');
           }
         },
         {
           text: 'Crear',
           handler: (data)=>{
-            data.completed = false;
+            data.completada = false;
             this.baseDadesService.create(data)
               .then(response => {
                 this.tasques.unshift( data );
@@ -85,12 +86,12 @@ export class BaseDadesPage{
     alert.present();
   }
 
-  updateTask(task, index){
-    task = Object.assign({}, task);
-    task.completed = !task.completed;
-    this.baseDadesService.update(task)
+  actualitzarTasca(tasca, index){
+    tasca = Object.assign({}, tasca);
+    tasca.completada = !tasca.completada;
+    this.baseDadesService.update(tasca)
       .then( response => {
-        this.tasques[index] = task;
+        this.tasques[index] = tasca;
       })
       .catch( error => {
         console.error( error );

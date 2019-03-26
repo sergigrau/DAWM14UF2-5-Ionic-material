@@ -13,8 +13,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { BaseDadesService } from '../providers/baseDadesService';
 import { SQLite } from '@ionic-native/sqlite';
 import {GeoPage} from "../pagines/geolocalitzacio/geolocalitzacio";
-import {ContactPage} from "../pagines/contactes/contactes";
-import {SearchPage} from "../pagines/trucada/trucada";
+
 
 /*
   Aplicació amb Ionic
@@ -47,8 +46,6 @@ export class MyApp {
       { titol: 'Llista / Detall', component: LlistaPage },
       { titol: 'BaseDades', component: BaseDadesPage },
       { titol: 'Camera', component: CameraPage},
-      { titol: 'Contactes', component: ContactPage},
-      { titol: 'Trucada', component: SearchPage},
       { titol: 'Geolocalitzacio', component: GeoPage}
     ];
   }

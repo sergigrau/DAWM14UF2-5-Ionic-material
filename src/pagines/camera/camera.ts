@@ -18,10 +18,12 @@ import { AndroidPermissions } from '@ionic-native/android-permissions';
 })
 export class CameraPage {
 
+  base64Image:any;
+
   constructor(private camera: Camera, private androidPermissions: AndroidPermissions) {
 
     this.androidPermissions.checkPermission(this.androidPermissions.PERMISSION.CAMERA).then(
-      result => console.log('Has permission?',result.hasPermission),
+      result => console.log('Té premís?',result.hasPermission),
       err => this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.CAMERA)
     );
 
@@ -31,13 +33,15 @@ export class CameraPage {
     const options: CameraOptions = {
       destinationType: this.camera.DestinationType.DATA_URL,
       quality: 100,
+      targetWidth: 1000,
+      targetHeight: 1000,
       encodingType: this.camera.EncodingType.JPEG,
       mediaType: this.camera.MediaType.PICTURE
     }
 
     this.camera.getPicture(options).then((imageData) => {
       // imageData is either a base64 encoded string or a file URI
-      let base64Image = 'data:image/jpeg;base64,' + imageData;
+       this.base64Image = 'data:image/jpeg;base64,' + imageData;
     }, (err) => {
       // Handle error
     });

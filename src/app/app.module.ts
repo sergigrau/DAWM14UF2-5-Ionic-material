@@ -9,13 +9,12 @@ import {LlistaPage} from '../pagines/llista/llista';
 import {BaseDadesPage} from "../pagines/baseDades/baseDades";
 import {CameraPage} from "../pagines/camera/camera";
 import {GeoPage} from "../pagines/geolocalitzacio/geolocalitzacio";
-import {ContactPage} from "../pagines/contactes/contactes";
-import {SearchPage} from "../pagines/trucada/trucada";
-
 import { BaseDadesService } from '../providers/baseDadesService';
 
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
+import { Camera } from '@ionic-native/camera';
+import { AndroidPermissions } from '@ionic-native/android-permissions';
 
 import { SQLite } from '@ionic-native/sqlite';
 
@@ -27,9 +26,7 @@ import { SQLite } from '@ionic-native/sqlite';
     LlistaPage,
     BaseDadesPage,
     CameraPage,
-    GeoPage,
-    ContactPage,
-    SearchPage
+    GeoPage
   ],
   imports: [
     BrowserModule,
@@ -43,15 +40,15 @@ import { SQLite } from '@ionic-native/sqlite';
     LlistaPage,
     BaseDadesPage,
     CameraPage,
-    GeoPage,
-    ContactPage,
-    SearchPage
+    GeoPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     SQLite,
     BaseDadesService,
+    Camera,
+    AndroidPermissions,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

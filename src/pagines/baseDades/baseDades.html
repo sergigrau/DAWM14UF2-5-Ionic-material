@@ -20,7 +20,7 @@
     <ion-item-sliding #sliding *ngFor="let tasca of tasques; let i = index">
       <ion-item >
         <ion-label>{{ tasca.titol }}</ion-label>
-        <ion-checkbox (ionChange)="updateTask( tasca, i )" [checked]="tasca.completed"></ion-checkbox>
+        <ion-checkbox (ionChange)="actualitzarTasca( tasca, i )" [checked]="tasca.completada"></ion-checkbox>
       </ion-item>
       <ion-item-options side="right" icon-left>
         <button ion-button color="danger" (click)="esborrarTasca(tasca, i)">
