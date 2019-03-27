@@ -30,7 +30,7 @@ export class BaseDadesPage{
   }
 
   esborrarTasca(tasca: any, index){
-    this.baseDadesService.delete(tasca)
+    this.baseDadesService.esborrar(tasca)
       .then(response => {
         console.log( response );
         this.tasques.splice(index, 1);
@@ -41,7 +41,7 @@ export class BaseDadesPage{
   }
 
   obtenirTotesTasques(){
-    this.baseDadesService.getAll()
+    this.baseDadesService.recuperarTots()
       .then(tasques => {
         console.log(tasques);
         this.tasques = tasques;
@@ -72,7 +72,7 @@ export class BaseDadesPage{
           text: 'Crear',
           handler: (data)=>{
             data.completada = false;
-            this.baseDadesService.create(data)
+            this.baseDadesService.crear(data)
               .then(response => {
                 this.tasques.unshift( data );
               })
@@ -89,7 +89,7 @@ export class BaseDadesPage{
   actualitzarTasca(tasca, index){
     tasca = Object.assign({}, tasca);
     tasca.completada = !tasca.completada;
-    this.baseDadesService.update(tasca)
+    this.baseDadesService.actualitzar(tasca)
       .then( response => {
         this.tasques[index] = tasca;
       })

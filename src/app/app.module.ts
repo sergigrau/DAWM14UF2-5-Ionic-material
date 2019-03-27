@@ -14,6 +14,7 @@ import { BaseDadesService } from '../providers/baseDadesService';
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import { Camera } from '@ionic-native/camera';
+import { Geolocation } from '@ionic-native/geolocation';
 import { AndroidPermissions } from '@ionic-native/android-permissions';
 
 import { SQLite } from '@ionic-native/sqlite';
@@ -49,6 +50,7 @@ import { SQLite } from '@ionic-native/sqlite';
     BaseDadesService,
     Camera,
     AndroidPermissions,
+    Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

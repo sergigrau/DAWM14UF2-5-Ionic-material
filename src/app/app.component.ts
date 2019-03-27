@@ -69,7 +69,7 @@ export class MyApp {
       location: 'default' // the location field is required
     })
       .then((db) => {
-        this.baseDadesService.setDatabase(db);
+        this.baseDadesService.assignarBD(db);
         return this.baseDadesService.createTable();
       })
       .catch(error =>{

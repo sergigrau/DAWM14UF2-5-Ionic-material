@@ -24,14 +24,11 @@ export class GeoPage {
   }
 
   ionViewDidLoad() {
-    this.getLocation();
+    this.obtenirLatLong();
   }
 
-  getLocation(){
+  obtenirLatLong(){
     this.geolocation.getCurrentPosition().then((res) => {
-      // resp.coords.latitude
-      // resp.coords.longitude
-      //let location= 'lat'+ res.coords.latitude +'lang'+ res.coords.longitude;
       let geolocalitzacio='lat '+res.coords.latitude+' lang '+res.coords.longitude;
       let toast = this.toastCtrl.create({
         message: geolocalitzacio,

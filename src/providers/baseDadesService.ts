@@ -12,43 +12,43 @@ export class BaseDadesService {
 
   // public methods
 
-  setDatabase(db: SQLiteObject){
+  assignarBD(db: SQLiteObject){
     if(this.db === null){
       this.db = db;
     }
   }
 
-  create(task: any){
-    let sql = 'INSERT INTO tasques(title, completed) VALUES(?,?)';
-    return this.db.executeSql(sql, [task.title, task.completed]);
+  crear(tasca: any){
+    let sql = 'INSERT INTO tasques(titol, completada) VALUES(?,?)';
+    return this.db.executeSql(sql, [tasca.titol, tasca.completada]);
   }
 
   createTable(){
-    let sql = 'CREATE TABLE IF NOT EXISTS tasques(id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT, completed INTEGER)';
+    let sql = 'CREATE TABLE IF NOT EXISTS tasques(id INTEGER PRIMARY KEY AUTOINCREMENT, titol TEXT, completada INTEGER)';
     return this.db.executeSql(sql, []);
   }
 
-  delete(task: any){
+  esborrar(task: any){
     let sql = 'DELETE FROM tasques WHERE id=?';
     return this.db.executeSql(sql, [task.id]);
   }
 
-  getAll(){
+  recuperarTots(){
     let sql = 'SELECT * FROM tasques';
     return this.db.executeSql(sql, [])
       .then(response => {
-        let tasks = [];
+        let tasques = [];
         for (let index = 0; index < response.rows.length; index++) {
-          tasks.push( response.rows.item(index) );
+          tasques.push( response.rows.item(index) );
         }
-        return Promise.resolve( tasks );
+        return Promise.resolve( tasques );
       })
       .catch(error => Promise.reject(error));
   }
 
-  update(task: any){
-    let sql = 'UPDATE tasques SET title=?, completed=? WHERE id=?';
-    return this.db.executeSql(sql, [task.title, task.completed, task.id]);
+  actualitzar(tasca: any){
+    let sql = 'UPDATE tasques SET titol=?, completada=? WHERE id=?';
+    return this.db.executeSql(sql, [tasca.titol, tasca.completada, tasca.id]);
   }
 
 }
