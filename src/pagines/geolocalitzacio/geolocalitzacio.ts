@@ -37,7 +37,7 @@ export class GeoPage {
       toast.present();
 
     }).catch((error) => {
-      console.log('Error obtetint localizatció', error);
+      console.log('Error obtetint localització', error);
     });
   }
 }

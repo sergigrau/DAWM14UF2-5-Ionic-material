@@ -9,15 +9,14 @@ import {LlistaPage} from '../pagines/llista/llista';
 import {BaseDadesPage} from "../pagines/baseDades/baseDades";
 import {CameraPage} from "../pagines/camera/camera";
 import {GeoPage} from "../pagines/geolocalitzacio/geolocalitzacio";
-import { BaseDadesService } from '../providers/baseDadesService';
+import {BaseDadesService} from '../providers/baseDadesService';
 
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
-import { Camera } from '@ionic-native/camera';
-import { Geolocation } from '@ionic-native/geolocation';
-import { AndroidPermissions } from '@ionic-native/android-permissions';
-
-import { SQLite } from '@ionic-native/sqlite';
+import {Camera} from '@ionic-native/camera';
+import {Geolocation} from '@ionic-native/geolocation';
+import {AndroidPermissions} from '@ionic-native/android-permissions';
+import {SQLite} from '@ionic-native/sqlite';
 
 @NgModule({
   declarations: [
